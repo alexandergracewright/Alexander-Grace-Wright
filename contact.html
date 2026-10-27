@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Discuss Your Book | Alexander Grace Wright, Book Marketing Strategist</title>
+<meta name="description" content="Share details about your book and your marketing goals. Alexander Grace Wright reviews every inquiry personally and responds with honest, research-based next steps.">
+<meta name="author" content="Alexander Grace Wright">
+
+<style>
+  :root{
+    --cream:#F6F1E6;
+    --warm-white:#FBF8F2;
+    --paper:#FFFFFF;
+    --charcoal:#272420;
+    --charcoal-soft:#4A463E;
+    --olive:#6E7651;
+    --olive-dark:#4C5236;
+    --olive-light:#AEB28E;
+    --border:#E1D8C3;
+    --border-soft:#EDE5D4;
+    --error:#A4453A;
+    --error-bg:#FBEDEB;
+    --success:#4C5236;
+    --success-bg:#EEF1E6;
+    --font-serif: Georgia, 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', serif;
+    --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --max-width: 1180px;
+    --radius: 3px;
+    --transition: 0.35s cubic-bezier(.4,0,.2,1);
+  }
+
+  *, *::before, *::after{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior: auto; }
+    *, *::before, *::after{
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  body{
+    margin:0;
+    font-family: var(--font-sans);
+    color: var(--charcoal);
+    background: var(--cream);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4{
+    font-family: var(--font-serif);
+    color: var(--charcoal);
+    line-height: 1.2;
+    margin: 0 0 0.6em;
+    font-weight: 400;
+  }
+
+  p{ margin: 0 0 1.1em; }
+  a{ color: inherit; text-decoration: none; }
+  img, svg{ display:block; max-width:100%; }
+  ul{ margin:0; padding:0; list-style:none; }
+
+  .container{
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  .eyebrow{
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--olive-dark);
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 14px;
+  }
+
+  .sr-only{
+    position:absolute;width:1px;height:1px;padding:0;margin:-1px;
+    overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;
+  }
+
+  .skip-link{
+    position:absolute;left:-9999px;top:0;
+    background: var(--charcoal);color: var(--warm-white);
+    padding: 12px 20px;z-index: 1000;
+  }
+  .skip-link:focus{ left: 16px; top: 16px; }
+
+  :focus-visible{
+    outline: 2px solid var(--olive-dark);
+    outline-offset: 3px;
+  }
+
+  /* ===================== HEADER / NAV ===================== */
+  header.site-header{
+    position: sticky;top:0;z-index: 500;
+    background: var(--warm-white);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-wrap{
+    max-width: var(--max-width);margin: 0 auto;padding: 18px 32px;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+
+  .brand{
+    font-family: var(--font-serif);font-size: 1.28rem;
+    letter-spacing: 0.01em;color: var(--charcoal);
+    display:flex;flex-direction:column;line-height:1.15;
+  }
+  .brand span{
+    font-family: var(--font-sans);font-size: 0.62rem;
+    letter-spacing: 0.16em;text-transform: uppercase;
+    color: var(--olive-dark);margin-top: 3px;font-weight: 600;
+  }
+
+  nav.primary-nav{ display:flex;align-items:center;gap: 38px; }
+  nav.primary-nav ul{ display:flex;gap: 30px; }
+
+  nav.primary-nav a{
+    font-size: 0.92rem;font-weight: 500;color: var(--charcoal-soft);
+    position: relative;padding: 4px 2px;transition: color var(--transition);
+  }
+  nav.primary-nav a::after{
+    content:"";position:absolute;left:0;bottom:-2px;height:1px;width:0%;
+    background: var(--olive-dark);transition: width var(--transition);
+  }
+  nav.primary-nav a:hover, nav.primary-nav a:focus-visible{ color: var(--charcoal); }
+  nav.primary-nav a:hover::after, nav.primary-nav a:focus-visible::after{ width:100%; }
+  nav.primary-nav a[aria-current="page"]{ color: var(--charcoal); }
+  nav.primary-nav a[aria-current="page"]::after{ width:100%; }
+
+  .nav-cta{
+    background: var(--olive-dark);color: var(--warm-white) !important;
+    padding: 10px 22px;border-radius: var(--radius);font-weight: 600;
+    white-space: nowrap;transition: background var(--transition), transform var(--transition);
+  }
+  .nav-cta::after{ display:none; }
+  .nav-cta:hover, .nav-cta:focus-visible{ background: var(--charcoal);transform: translateY(-1px); }
+
+  .menu-toggle{
+    display:none;background:none;border: 1px solid var(--border);
+    border-radius: var(--radius);padding: 8px 10px;cursor:pointer;
+  }
+  .menu-toggle span{
+    display:block;width: 22px;height: 2px;background: var(--charcoal);
+    margin: 4px 0;transition: transform var(--transition), opacity var(--transition);
+  }
+  .menu-toggle[aria-expanded="true"] span:nth-child(1){ transform: translateY(6px) rotate(45deg); }
+  .menu-toggle[aria-expanded="true"] span:nth-child(2){ opacity:0; }
+  .menu-toggle[aria-expanded="true"] span:nth-child(3){ transform: translateY(-6px) rotate(-45deg); }
+
+  /* ===================== PAGE HERO ===================== */
+  .page-hero{ padding: 80px 0 50px; border-bottom: 1px solid var(--border-soft); }
+  .page-hero h1{ font-size: clamp(2rem, 3.6vw, 2.9rem); max-width: 22ch; }
+  .page-hero p{ color: var(--charcoal-soft); font-size: 1.08rem; max-width: 60ch; }
+
+  /* ===================== REVEAL ===================== */
+  .reveal{
+    opacity:0;transform: translateY(24px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal.is-visible{ opacity:1; transform: translateY(0); }
+
+  /* ===================== CONTACT LAYOUT ===================== */
+  .contact-section{ padding: 80px 0 100px; }
+
+  .contact-grid{
+    display:grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 56px;
+    align-items:start;
+  }
+
+  /* ----- Sidebar ----- */
+  .contact-sidebar{
+    position: sticky;
+    top: 100px;
+  }
+
+  .sidebar-card{
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 30px 26px;
+    margin-bottom: 22px;
+  }
+
+  .sidebar-card h3{
+    font-size: 1.02rem;
+    margin-bottom: 0.5em;
+  }
+
+  .sidebar-card p{
+    font-size: 0.92rem;
+    color: var(--charcoal-soft);
+    margin-bottom: 0.8em;
+  }
+
+  .sidebar-card a.email-link{
+    font-weight: 600;
+    color: var(--olive-dark);
+    word-break: break-word;
+  }
+
+  .sidebar-list{
+    display:grid;
+    gap: 14px;
+  }
+  .sidebar-list li{
+    display:flex;
+    gap: 10px;
+    align-items:flex-start;
+    font-size: 0.88rem;
+    color: var(--charcoal-soft);
+  }
+  .sidebar-list svg{ flex-shrink:0; margin-top: 3px; }
+
+  /* ----- Form Card ----- */
+  .form-card{
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 44px 40px;
+  }
+
+  .form-row{
+    margin-bottom: 26px;
+  }
+
+  .form-row-split{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+  }
+
+  label{
+    display:block;
+    font-weight: 600;
+    font-size: 0.92rem;
+    color: var(--charcoal);
+    margin-bottom: 7px;
+  }
+
+  label .required-mark{
+    color: var(--error);
+    margin-left: 3px;
+  }
+
+  label .optional-tag{
+    font-weight: 500;
+    color: var(--charcoal-soft);
+    font-size: 0.8rem;
+    text-transform: none;
+    margin-left: 6px;
+  }
+
+  .field-hint{
+    font-size: 0.82rem;
+    color: var(--charcoal-soft);
+    margin-top: -2px;
+    margin-bottom: 8px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="url"],
+  select,
+  textarea{
+    width:100%;
+    font-family: var(--font-sans);
+    font-size: 0.96rem;
+    color: var(--charcoal);
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 12px 14px;
+    transition: border-color var(--transition), box-shadow var(--transition);
+  }
+
+  textarea{
+    resize: vertical;
+    min-height: 110px;
+    line-height:1.5;
+  }
+
+  input:focus,
+  select:focus,
+  textarea:focus{
+    outline:none;
+    border-color: var(--olive-dark);
+    box-shadow: 0 0 0 3px rgba(76,82,54,0.14);
+  }
+
+  input[aria-invalid="true"],
+  select[aria-invalid="true"],
+  textarea[aria-invalid="true"]{
+    border-color: var(--error);
+  }
+
+  .error-message{
+    display:none;
+    color: var(--error);
+    font-size: 0.82rem;
+    margin-top: 6px;
+    font-weight: 600;
+  }
+  .error-message.visible{ display:block; }
+
+  /* Checkbox */
+  .checkbox-row{
+    display:flex;
+    align-items:flex-start;
+    gap: 12px;
+  }
+  .checkbox-row input[type="checkbox"]{
+    margin-top: 4px;
+    width: 18px;
+    height: 18px;
+    flex-shrink:0;
+    accent-color: var(--olive-dark);
+    cursor:pointer;
+  }
+  .checkbox-row label{
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--charcoal-soft);
+    margin-bottom:0;
+    cursor:pointer;
+  }
+  .checkbox-row a{
+    color: var(--olive-dark);
+    font-weight: 600;
+    text-decoration: underline;
+  }
+
+  /* Submit button */
+  .submit-row{
+    margin-top: 10px;
+    display:flex;
+    align-items:center;
+    gap: 18px;
+    flex-wrap:wrap;
+  }
+
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap: 10px;
+    padding: 15px 32px;
+    border-radius: var(--radius);
+    font-weight: 600;
+    font-size: 0.96rem;
+    transition: all var(--transition);
+    border: 1px solid transparent;
+    cursor: pointer;
+    font-family: var(--font-sans);
+  }
+  .btn-primary{
+    background: var(--olive-dark);
+    color: var(--warm-white);
+  }
+  .btn-primary:hover:not(:disabled), .btn-primary:focus-visible:not(:disabled){
+    background: var(--charcoal);
+    transform: translateY(-2px);
+  }
+  .btn-primary:disabled{
+    opacity: 0.65;
+    cursor: not-allowed;
+    transform:none;
+  }
+
+  .spinner{
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(251,248,242,0.4);
+    border-top-color: var(--warm-white);
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+    display:none;
+  }
+  .btn-primary.is-loading .spinner{ display:inline-block; }
+  .btn-primary.is-loading .btn-text{ opacity: 0.85; }
+
+  @keyframes spin{
+    to{ transform: rotate(360deg); }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .spinner{ animation: none; }
+  }
+
+  /* Form-level feedback */
+  .form-feedback{
+    display:none;
+    padding: 16px 18px;
+    border-radius: var(--radius);
+    font-size: 0.92rem;
+    margin-bottom: 26px;
+    font-weight: 500;
+  }
+  .form-feedback.visible{ display:block; }
+  .form-feedback.success{
+    background: var(--success-bg);
+    color: var(--success);
+    border: 1px solid #CBD4B2;
+  }
+  .form-feedback.error{
+    background: var(--error-bg);
+    color: var(--error);
+    border: 1px solid #EBC3BD;
+  }
+
+  .form-fieldset-legend{
+    font-family: var(--font-serif);
+    font-size: 1.3rem;
+    color: var(--charcoal);
+    margin-bottom: 26px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border-soft);
+  }
+
+  /* ===================== FOOTER ===================== */
+  footer.site-footer{ background: var(--charcoal); color: #D9D4C8; padding: 70px 0 30px; }
+
+  .footer-grid{
+    display:grid;grid-template-columns: 1.4fr 1fr 1fr 1fr;gap: 40px;
+    padding-bottom: 46px;border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .footer-brand .brand{ color: var(--warm-white); }
+  .footer-brand .brand span{ color: var(--olive-light); }
+  .footer-brand p{ color: #B9B4A6; font-size: 0.92rem; margin-top: 16px; max-width: 32ch; }
+
+  footer h4{
+    font-family: var(--font-sans);color: var(--warm-white);font-size: 0.85rem;
+    letter-spacing: 0.08em;text-transform: uppercase;margin-bottom: 18px;font-weight: 700;
+  }
+
+  footer ul li{ margin-bottom: 12px; }
+  footer a{ color: #D9D4C8; font-size: 0.92rem; transition: color var(--transition); }
+  footer a:hover, footer a:focus-visible{ color: var(--warm-white); }
+
+  .footer-bottom{
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;
+    gap: 12px;padding-top: 26px;font-size: 0.82rem;color: #938E7F;
+  }
+  .footer-bottom a{ font-size: 0.82rem; }
+
+  /* ===================== RESPONSIVE ===================== */
+  @media (max-width: 1024px){
+    .contact-grid{ grid-template-columns: 1fr; }
+    .contact-sidebar{ position:static; order: 2; }
+    .footer-grid{ grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (max-width: 860px){
+    nav.primary-nav ul{ display:none; }
+    .menu-toggle{ display:block; }
+
+    nav.primary-nav{
+      position: fixed;top: 73px;left:0;right:0;
+      background: var(--warm-white);border-bottom: 1px solid var(--border);
+      flex-direction:column;align-items:stretch;gap:0;
+      max-height: 0;overflow:hidden;transition: max-height var(--transition);
+    }
+    nav.primary-nav.open{ max-height: 420px; }
+    nav.primary-nav ul{ display:flex;flex-direction:column;padding: 10px 32px 20px;gap: 0; }
+    nav.primary-nav ul li{ border-bottom: 1px solid var(--border-soft); }
+    nav.primary-nav ul li a{ display:block;padding: 14px 0; }
+    nav.primary-nav .nav-cta{ margin: 16px 32px 22px;text-align:center;justify-content:center; }
+
+    .form-card{ padding: 32px 24px; }
+    .form-row-split{ grid-template-columns: 1fr; gap: 0; }
+  }
+
+  @media (max-width: 680px){
+    .contact-section{ padding: 50px 0 70px; }
+    .page-hero{ padding: 50px 0 36px; }
+    .footer-grid{ grid-template-columns: 1fr; gap: 30px; }
+    .container{ padding: 0 20px; }
+    .nav-wrap{ padding: 16px 20px; }
+    .form-card{ padding: 26px 18px; }
+    .submit-row{ flex-direction:column; align-items:stretch; }
+    .btn-primary{ width:100%; }
+  }
+</style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- ===================== HEADER ===================== -->
+<header class="site-header">
+  <div class="nav-wrap">
+    <a href="index.html" class="brand">
+      Alexander Grace Wright
+      <span>Book Marketing Strategist</span>
+    </a>
+
+    <nav class="primary-nav" id="primaryNav" aria-label="Primary navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="approach.html">Our Approach</a></li>
+        <li><a href="work.html">Selected Work</a></li>
+      </ul>
+      <a href="contact.html" class="nav-cta" aria-current="page">Discuss Your Book</a>
+    </nav>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primaryNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main-content">
+
+  <!-- ===================== PAGE HERO ===================== -->
+  <section class="page-hero">
+    <div class="container reveal">
+      <span class="eyebrow">Discuss Your Book</span>
+      <h1>Tell me about your book and your goals.</h1>
+      <p>Share as much or as little detail as you'd like. I personally review every inquiry and will respond with honest thoughts on where the research might lead for your specific book.</p>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT SECTION ===================== -->
+  <section class="contact-section">
+    <div class="container contact-grid">
+
+      <!-- ===================== SIDEBAR ===================== -->
+      <aside class="contact-sidebar reveal">
+        <div class="sidebar-card">
+          <h3>Prefer Email</h3>
+          <p>You're welcome to reach out directly if you'd rather not use the form.</p>
+          <a href="mailto:alexanderwright205@gmail.com" class="email-link">alexanderwright205@gmail.com</a>
+        </div>
+
+        <div class="sidebar-card">
+          <h3>What Happens Next</h3>
+          <ul class="sidebar-list">
+            <li>
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="#4C5236" stroke-width="1.3"/></svg>
+              I review your inquiry personally, usually within a few business days.
+            </li>
+            <li>
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="#4C5236" stroke-width="1.3"/></svg>
+              I'll reply by email with initial thoughts or clarifying questions.
+            </li>
+            <li>
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="#4C5236" stroke-width="1.3"/></svg>
+              If it's a good fit, we'll discuss research, scope, and next steps together.
+            </li>
+          </ul>
+        </div>
+
+        <div class="sidebar-card">
+          <h3>No Pressure</h3>
+          <p>Reaching out doesn't commit you to anything. This is simply the start of a conversation about your book.</p>
+        </div>
+      </aside>
+
+      <!-- ===================== FORM CARD ===================== -->
+      <div class="form-card reveal">
+        <p class="form-fieldset-legend">Inquiry Form</p>
+
+        <!-- Form-level success / error feedback -->
+        <div class="form-feedback success" id="formSuccess" role="status" aria-live="polite">
+          Thank you. Your inquiry has been sent successfully. I'll be in touch by email soon.
+        </div>
+        <div class="form-feedback error" id="formError" role="alert" aria-live="assertive">
+          Something went wrong while sending your inquiry. Please check your connection and try again, or email me directly at alexanderwright205@gmail.com.
+        </div>
+
+        <!--
+          FORM ENDPOINT NOTE:
+          This form submits to a Formspree endpoint: https://formspree.io/f/moeeernb
+          If you ever need to change where submissions are sent, replace the "action"
+          attribute below and the FORM_ENDPOINT constant in the script with your new
+          Formspree (or other form service) endpoint URL.
+        -->
+        <form id="inquiryForm" action="https://formspree.io/f/moeeernb" method="POST" novalidate>
+
+          <div class="form-row">
+            <label for="fullName">Full Name <span class="required-mark">*</span></label>
+            <input type="text" id="fullName" name="fullName" autocomplete="name" required aria-required="true" aria-describedby="fullNameError">
+            <span class="error-message" id="fullNameError">Please enter your name.</span>
+          </div>
+
+          <div class="form-row">
+            <label for="email">Email Address <span class="required-mark">*</span></label>
+            <input type="email" id="email" name="email" autocomplete="email" required aria-required="true" aria-describedby="emailError">
+            <span class="error-message" id="emailError">Please enter a valid email address.</span>
+          </div>
+
+          <div class="form-row">
+            <label for="websiteLink">Author Website or Book Link <span class="optional-tag">(Optional)</span></label>
+            <div class="field-hint">A link to your author website, Amazon page, or Goodreads profile, if available.</div>
+            <input type="url" id="websiteLink" name="websiteLink" autocomplete="url" placeholder="https://" aria-describedby="websiteLinkError">
+            <span class="error-message" id="websiteLinkError">Please enter a valid URL, starting with http:// or https://.</span>
+          </div>
+
+          <div class="form-row form-row-split">
+            <div>
+              <label for="publishingBackground">Publishing Background <span class="required-mark">*</span></label>
+              <select id="publishingBackground" name="publishingBackground" required aria-required="true" aria-describedby="publishingBackgroundError">
+                <option value="" disabled selected>Select one</option>
+                <option value="Independently Published">Independently Published</option>
+                <option value="Traditionally Published">Traditionally Published</option>
+                <option value="Debut Author (Unpublished or Forthcoming)">Debut Author (Unpublished or Forthcoming)</option>
+                <option value="Hybrid / Both Independent and Traditional">Hybrid / Both Independent and Traditional</option>
+                <option value="Other">Other</option>
+              </select>
+              <span class="error-message" id="publishingBackgroundError">Please select your publishing background.</span>
+            </div>
+
+            <div>
+              <label for="serviceInterest">Service of Interest <span class="required-mark">*</span></label>
+              <select id="serviceInterest" name="serviceInterest" required aria-required="true" aria-describedby="serviceInterestError">
+                <option value="" disabled selected>Select one</option>
+                <option value="Book Discovery & Marketing Strategy">Book Discovery &amp; Marketing Strategy</option>
+                <option value="Author & Catalogue Research">Author &amp; Catalogue Research</option>
+                <option value="Amazon & Goodreads Visibility">Amazon &amp; Goodreads Visibility</option>
+                <option value="Book Trailers & Author Websites">Book Trailers &amp; Author Websites</option>
+                <option value="Book Launch & Promotional Campaigns">Book Launch &amp; Promotional Campaigns</option>
+                <option value="Reader Outreach & Audience Development">Reader Outreach &amp; Audience Development</option>
+                <option value="Not Sure Yet">Not Sure Yet</option>
+              </select>
+              <span class="error-message" id="serviceInterestError">Please select a service of interest.</span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <label for="bookDescription">Book Title or Brief Description <span class="optional-tag">(Optional)</span></label>
+            <div class="field-hint">The title, genre, and a sentence or two describing your book.</div>
+            <textarea id="bookDescription" name="bookDescription" rows="3"></textarea>
+          </div>
+
+          <div class="form-row">
+            <label for="marketingGoal">Main Marketing Challenge or Goal <span class="required-mark">*</span></label>
+            <div class="field-hint">What would you most like help with right now?</div>
+            <textarea id="marketingGoal" name="marketingGoal" rows="4" required aria-required="true" aria-describedby="marketingGoalError"></textarea>
+            <span class="error-message" id="marketingGoalError">Please share your main marketing challenge or goal.</span>
+          </div>
+
+          <div class="form-row">
+            <label for="budgetRange">Budget or Investment Range <span class="optional-tag">(Optional)</span></label>
+            <select id="budgetRange" name="budgetRange">
+              <option value="" selected>Prefer not to say</option>
+              <option value="Under $500">Under $500</option>
+              <option value="$500 to $1,500">$500 to $1,500</option>
+              <option value="$1,500 to $3,500">$1,500 to $3,500</option>
+              <option value="$3,500 and above">$3,500 and above</option>
+              <option value="Not sure yet, would like to discuss">Not sure yet, would like to discuss</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label for="additionalInfo">Additional Information <span class="optional-tag">(Optional)</span></label>
+            <textarea id="additionalInfo" name="additionalInfo" rows="3"></textarea>
+          </div>
+
+          <div class="form-row">
+            <div class="checkbox-row">
+              <input type="checkbox" id="privacyAcknowledge" name="privacyAcknowledge" required aria-required="true" aria-describedby="privacyError">
+              <label for="privacyAcknowledge">I understand that the information I submit will be used to respond to my inquiry, as described in the <a href="privacy.html">Privacy Policy</a>. <span class="required-mark">*</span></label>
+            </div>
+            <span class="error-message" id="privacyError">Please acknowledge the privacy notice to continue.</span>
+          </div>
+
+          <!-- Honeypot field to reduce spam, hidden from real visitors -->
+          <div style="position:absolute; left:-9999px;" aria-hidden="true">
+            <label for="honeypot">Leave this field blank</label>
+            <input type="text" id="honeypot" name="_gotcha" tabindex="-1" autocomplete="off">
+          </div>
+
+          <div class="submit-row">
+            <button type="submit" class="btn btn-primary" id="submitBtn">
+              <span class="spinner" aria-hidden="true"></span>
+              <span class="btn-text">Send Inquiry</span>
+            </button>
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand">
+          Alexander Grace Wright
+          <span>Book Marketing Strategist</span>
+        </a>
+        <p>Research-led book marketing and reader discovery consulting for authors of every publishing background.</p>
+      </div>
+
+      <div>
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="approach.html">Our Approach</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>More</h4>
+        <ul>
+          <li><a href="work.html">Selected Work</a></li>
+          <li><a href="contact.html">Discuss Your Book</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:alexanderwright205@gmail.com">alexanderwright205@gmail.com</a></li>
+          <li><a href="contact.html">Inquiry Form</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> Alexander Grace Wright. All rights reserved.</span>
+      <a href="privacy.html">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ===================== MOBILE NAVIGATION =====================
+  (function(){
+    const toggle = document.getElementById('menuToggle');
+    const nav = document.getElementById('primaryNav');
+
+    toggle.addEventListener('click', function(){
+      const isOpen = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    nav.querySelectorAll('a').forEach(function(link){
+      link.addEventListener('click', function(){
+        nav.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape'){
+        nav.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  })();
+
+  // ===================== SCROLL REVEAL ANIMATION =====================
+  (function(){
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const revealEls = document.querySelectorAll('.reveal');
+
+    if(reduceMotion || !('IntersectionObserver' in window)){
+      revealEls.forEach(function(el){ el.classList.add('is-visible'); });
+      return;
+    }
+
+    const observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    revealEls.forEach(function(el){ observer.observe(el); });
+  })();
+
+  // ===================== FOOTER YEAR =====================
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // ===================== CONTACT FORM VALIDATION & SUBMISSION =====================
+  (function(){
+    // Your live Formspree endpoint. Replace this value if you ever switch
+    // to a different form or a different form-processing provider.
+    const FORM_ENDPOINT = 'https://formspree.io/f/moeeernb';
+
+    const form = document.getElementById('inquiryForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const successBox = document.getElementById('formSuccess');
+    const errorBox = document.getElementById('formError');
+
+    // Simple, reasonably strict email pattern for client-side validation
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const urlPattern = /^https?:\/\/.+\..+/i;
+
+    function showFieldError(input, errorEl){
+      input.setAttribute('aria-invalid', 'true');
+      if(errorEl){ errorEl.classList.add('visible'); }
+    }
+
+    function clearFieldError(input, errorEl){
+      input.setAttribute('aria-invalid', 'false');
+      if(errorEl){ errorEl.classList.remove('visible'); }
+    }
+
+    function validateField(input){
+      const errorEl = document.getElementById(input.getAttribute('aria-describedby'));
+      const value = input.value.trim();
+
+      // Required check
+      if(input.hasAttribute('required')){
+        if(input.type === 'checkbox'){
+          if(!input.checked){
+            showFieldError(input, errorEl);
+            return false;
+          }
+        } else if(value === ''){
+          showFieldError(input, errorEl);
+          return false;
+        }
+      }
+
+      // Email format check
+      if(input.type === 'email' && value !== '' && !emailPattern.test(value)){
+        showFieldError(input, errorEl);
+        return false;
+      }
+
+      // URL format check (only if a value was entered, since it's optional)
+      if(input.type === 'url' && value !== '' && !urlPattern.test(value)){
+        showFieldError(input, errorEl);
+        return false;
+      }
+
+      clearFieldError(input, errorEl);
+      return true;
+    }
+
+    // Validate on blur for immediate, helpful feedback
+    const fieldsToValidate = form.querySelectorAll('[required], input[type="email"], input[type="url"]');
+    fieldsToValidate.forEach(function(field){
+      field.addEventListener('blur', function(){
+        validateField(field);
+      });
+    });
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+
+      // Hide any previous feedback messages
+      successBox.classList.remove('visible');
+      errorBox.classList.remove('visible');
+
+      // Run validation across all relevant fields
+      let isFormValid = true;
+      fieldsToValidate.forEach(function(field){
+        const fieldValid = validateField(field);
+        if(!fieldValid){ isFormValid = false; }
+      });
+
+      if(!isFormValid){
+        // Move focus to the first invalid field for accessibility
+        const firstInvalid = form.querySelector('[aria-invalid="true"]');
+        if(firstInvalid){ firstInvalid.focus(); }
+        return;
+      }
+
+      // Begin loading state
+      submitBtn.disabled = true;
+      submitBtn.classList.add('is-loading');
+      submitBtn.querySelector('.btn-text').textContent = 'Sending...';
+
+      const formData = new FormData(form);
+
+      fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+      .then(function(response){
+        if(response.ok){
+          // Success: show confirmation, reset form
+          form.reset();
+          fieldsToValidate.forEach(function(field){
+            field.setAttribute('aria-invalid', 'false');
+          });
+          successBox.classList.add('visible');
+          successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else {
+          return response.json().then(function(data){
+            throw new Error(
+              (data && data.errors && data.errors.map(function(err){ return err.message; }).join(', ')) ||
+              'The form service returned an error.'
+            );
+          });
+        }
+      })
+      .catch(function(){
+        // Network error or non-ok response: show error, do not pretend success
+        errorBox.classList.add('visible');
+        errorBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      })
+      .finally(function(){
+        submitBtn.disabled = false;
+        submitBtn.classList.remove('is-loading');
+        submitBtn.querySelector('.btn-text').textContent = 'Send Inquiry';
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>

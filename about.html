@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Alexander Grace Wright | Book Marketing Strategist</title>
+<meta name="description" content="Learn about Alexander Grace Wright, a book marketing strategist and reader discovery consultant with more than eight years of experience across marketing, research, and promotion.">
+<meta name="author" content="Alexander Grace Wright">
+
+<style>
+  :root{
+    --cream:#F6F1E6;
+    --warm-white:#FBF8F2;
+    --paper:#FFFFFF;
+    --charcoal:#272420;
+    --charcoal-soft:#4A463E;
+    --olive:#6E7651;
+    --olive-dark:#4C5236;
+    --olive-light:#AEB28E;
+    --border:#E1D8C3;
+    --border-soft:#EDE5D4;
+    --font-serif: Georgia, 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', serif;
+    --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --max-width: 1180px;
+    --radius: 3px;
+    --transition: 0.35s cubic-bezier(.4,0,.2,1);
+  }
+
+  *, *::before, *::after{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior: auto; }
+    *, *::before, *::after{
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  body{
+    margin:0;
+    font-family: var(--font-sans);
+    color: var(--charcoal);
+    background: var(--cream);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4{
+    font-family: var(--font-serif);
+    color: var(--charcoal);
+    line-height: 1.2;
+    margin: 0 0 0.6em;
+    font-weight: 400;
+  }
+
+  p{ margin: 0 0 1.1em; }
+  a{ color: inherit; text-decoration: none; }
+  img, svg{ display:block; max-width:100%; }
+  ul{ margin:0; padding:0; list-style:none; }
+
+  .container{
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  .eyebrow{
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--olive-dark);
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 14px;
+  }
+
+  .sr-only{
+    position:absolute;
+    width:1px;height:1px;
+    padding:0;margin:-1px;
+    overflow:hidden;
+    clip:rect(0,0,0,0);
+    white-space:nowrap;border:0;
+  }
+
+  .skip-link{
+    position:absolute;
+    left:-9999px;
+    top:0;
+    background: var(--charcoal);
+    color: var(--warm-white);
+    padding: 12px 20px;
+    z-index: 1000;
+  }
+  .skip-link:focus{ left: 16px; top: 16px; }
+
+  :focus-visible{
+    outline: 2px solid var(--olive-dark);
+    outline-offset: 3px;
+  }
+
+  /* ===================== HEADER / NAV ===================== */
+  header.site-header{
+    position: sticky;
+    top:0;
+    z-index: 500;
+    background: var(--warm-white);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-wrap{
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 18px 32px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+
+  .brand{
+    font-family: var(--font-serif);
+    font-size: 1.28rem;
+    letter-spacing: 0.01em;
+    color: var(--charcoal);
+    display:flex;
+    flex-direction:column;
+    line-height:1.15;
+  }
+  .brand span{
+    font-family: var(--font-sans);
+    font-size: 0.62rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--olive-dark);
+    margin-top: 3px;
+    font-weight: 600;
+  }
+
+  nav.primary-nav{
+    display:flex;
+    align-items:center;
+    gap: 38px;
+  }
+
+  nav.primary-nav ul{
+    display:flex;
+    gap: 30px;
+  }
+
+  nav.primary-nav a{
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: var(--charcoal-soft);
+    position: relative;
+    padding: 4px 2px;
+    transition: color var(--transition);
+  }
+
+  nav.primary-nav a::after{
+    content:"";
+    position:absolute;
+    left:0; bottom:-2px;
+    height:1px;
+    width:0%;
+    background: var(--olive-dark);
+    transition: width var(--transition);
+  }
+
+  nav.primary-nav a:hover,
+  nav.primary-nav a:focus-visible{ color: var(--charcoal); }
+  nav.primary-nav a:hover::after,
+  nav.primary-nav a:focus-visible::after{ width:100%; }
+
+  nav.primary-nav a[aria-current="page"]{ color: var(--charcoal); }
+  nav.primary-nav a[aria-current="page"]::after{ width:100%; }
+
+  .nav-cta{
+    background: var(--olive-dark);
+    color: var(--warm-white) !important;
+    padding: 10px 22px;
+    border-radius: var(--radius);
+    font-weight: 600;
+    white-space: nowrap;
+    transition: background var(--transition), transform var(--transition);
+  }
+  .nav-cta::after{ display:none; }
+  .nav-cta:hover, .nav-cta:focus-visible{
+    background: var(--charcoal);
+    transform: translateY(-1px);
+  }
+
+  .menu-toggle{
+    display:none;
+    background:none;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 8px 10px;
+    cursor:pointer;
+  }
+  .menu-toggle span{
+    display:block;
+    width: 22px;
+    height: 2px;
+    background: var(--charcoal);
+    margin: 4px 0;
+    transition: transform var(--transition), opacity var(--transition);
+  }
+  .menu-toggle[aria-expanded="true"] span:nth-child(1){ transform: translateY(6px) rotate(45deg); }
+  .menu-toggle[aria-expanded="true"] span:nth-child(2){ opacity:0; }
+  .menu-toggle[aria-expanded="true"] span:nth-child(3){ transform: translateY(-6px) rotate(-45deg); }
+
+  /* ===================== PAGE HERO ===================== */
+  .page-hero{
+    padding: 80px 0 70px;
+    border-bottom: 1px solid var(--border-soft);
+  }
+  .page-hero .eyebrow{ margin-bottom: 16px; }
+  .page-hero h1{
+    font-size: clamp(2rem, 3.6vw, 2.9rem);
+    max-width: 18ch;
+  }
+  .page-hero p{
+    color: var(--charcoal-soft);
+    font-size: 1.08rem;
+    max-width: 58ch;
+  }
+
+  /* ===================== REVEAL ===================== */
+  .reveal{
+    opacity:0;
+    transform: translateY(24px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal.is-visible{ opacity:1; transform: translateY(0); }
+
+  section{ padding: 90px 0; }
+
+  .section-head{
+    max-width: 680px;
+    margin: 0 auto 56px;
+    text-align:center;
+  }
+  .section-head h2{ font-size: clamp(1.7rem, 3vw, 2.3rem); }
+  .section-head p{ color: var(--charcoal-soft); font-size: 1.04rem; }
+
+  .divider-line{
+    width: 56px;
+    height: 2px;
+    background: var(--olive);
+    margin: 18px auto 0;
+  }
+
+  /* ===================== INTRO / PHOTO ===================== */
+  .intro{
+    background: var(--warm-white);
+    border-bottom: 1px solid var(--border-soft);
+  }
+
+  .intro-grid{
+    display:grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 60px;
+    align-items:center;
+  }
+
+  /*
+    PROFILE PHOTO
+    This frame is pre-wired to look for a file named "alexander.png".
+
+    TO ADD YOUR PHOTO:
+    1. Save your professional headshot as "alexander.png"
+    2. Upload it into the SAME folder as this HTML file
+       (if you place it in a subfolder instead, e.g. "images/alexander.png",
+       update the src path in the <img> tag below to match)
+    3. Refresh the page. Your photo will appear automatically inside the
+       circular frame, cropped to fit.
+
+    If "alexander.png" is missing or not yet uploaded, a placeholder graphic
+    displays instead so the page layout never breaks.
+  */
+  .photo-placeholder{
+    position: relative;
+    width:100%;
+    max-width:320px;
+    aspect-ratio:1/1;
+    margin:0 auto;
+    border-radius:50%;
+    overflow:hidden;
+    background: var(--paper);
+    transition: transform var(--transition);
+  }
+  .photo-placeholder:hover{
+    transform: translateY(-3px);
+  }
+
+  .profile-photo{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:none;
+  }
+
+  .photo-fallback{
+    position:absolute;
+    inset:0;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    padding:28px;
+    text-align:center;
+    border:2px dashed var(--olive-light);
+    border-radius:50%;
+    background: var(--paper);
+    transition: border-color var(--transition);
+  }
+  .photo-placeholder:hover .photo-fallback{
+    border-color: var(--olive-dark);
+  }
+
+  .placeholder-label{
+    font-family: var(--font-serif);
+    font-size: 1.02rem;
+    color: var(--charcoal-soft);
+  }
+  .placeholder-sub{
+    font-size: 0.76rem;
+    color: var(--olive-dark);
+    max-width: 20ch;
+    line-height:1.4;
+  }
+
+  .intro-copy p{
+    color: var(--charcoal-soft);
+    font-size: 1.02rem;
+  }
+  .intro-copy p:first-of-type{
+    color: var(--charcoal);
+    font-size: 1.14rem;
+  }
+
+  /* ===================== CREDENTIALS STRIP ===================== */
+  .credentials-strip{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin-top: 44px;
+  }
+
+  .credential-item{
+    border-top: 2px solid var(--olive);
+    padding-top: 18px;
+  }
+  .credential-item .big{
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    color: var(--charcoal);
+    margin-bottom: 6px;
+  }
+  .credential-item p{
+    color: var(--charcoal-soft);
+    font-size: 0.9rem;
+    margin:0;
+  }
+
+  /* ===================== PHILOSOPHY ===================== */
+  .philosophy-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items:start;
+  }
+
+  .philosophy-grid h2{
+    font-size: clamp(1.7rem, 3vw, 2.2rem);
+    max-width: 14ch;
+  }
+
+  .philosophy-list{
+    display:grid;
+    gap: 26px;
+  }
+
+  .philosophy-item{
+    display:flex;
+    gap: 18px;
+    align-items:flex-start;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border-soft);
+  }
+  .philosophy-item:last-child{ border-bottom:none; padding-bottom:0; }
+
+  .philosophy-item .mark{
+    flex-shrink:0;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1px solid var(--olive);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color: var(--olive-dark);
+  }
+
+  .philosophy-item h3{
+    font-size: 1.05rem;
+    margin-bottom: 0.35em;
+    font-family: var(--font-sans);
+    font-weight: 600;
+  }
+  .philosophy-item p{
+    color: var(--charcoal-soft);
+    font-size: 0.97rem;
+    margin:0;
+  }
+
+  /* ===================== WHO I WORK WITH ===================== */
+  .audience-grid{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+  }
+
+  .audience-card{
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 30px 24px;
+    text-align:center;
+    transition: transform var(--transition), border-color var(--transition);
+  }
+  .audience-card:hover{
+    transform: translateY(-5px);
+    border-color: var(--olive);
+  }
+  .audience-card svg{ margin: 0 auto 16px; }
+  .audience-card h3{
+    font-size: 1rem;
+    margin-bottom: 0.4em;
+  }
+  .audience-card p{
+    font-size: 0.88rem;
+    color: var(--charcoal-soft);
+    margin:0;
+  }
+
+  /* ===================== PERSONAL NOTE ===================== */
+  .personal-note{
+    background: var(--charcoal);
+    color: var(--warm-white);
+  }
+  .personal-note .note-wrap{
+    max-width: 760px;
+    margin: 0 auto;
+    text-align:center;
+  }
+  .personal-note .eyebrow{ color: var(--olive-light); }
+  .personal-note h2{
+    color: var(--warm-white);
+    font-size: clamp(1.6rem, 2.8vw, 2.1rem);
+  }
+  .personal-note p{
+    color: #D9D4C8;
+    font-size: 1.04rem;
+  }
+
+  /* ===================== CLOSING CTA ===================== */
+  .closing-cta{
+    background: var(--olive-dark);
+    color: var(--warm-white);
+    text-align:center;
+    padding: 90px 0;
+  }
+  .closing-cta h2{
+    color: var(--warm-white);
+    font-size: clamp(1.8rem, 3.4vw, 2.5rem);
+    max-width: 18ch;
+    margin: 0 auto 0.5em;
+  }
+  .closing-cta p{
+    color: #EDEADF;
+    max-width: 50ch;
+    margin: 0 auto 2em;
+  }
+
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap: 8px;
+    padding: 14px 28px;
+    border-radius: var(--radius);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all var(--transition);
+    border: 1px solid transparent;
+    cursor: pointer;
+  }
+  .btn-primary{
+    background: var(--warm-white);
+    color: var(--charcoal);
+  }
+  .btn-primary:hover, .btn-primary:focus-visible{
+    background: var(--cream);
+    transform: translateY(-2px);
+  }
+  .btn-outline{
+    background: transparent;
+    color: var(--charcoal);
+    border-color: var(--charcoal);
+  }
+  .btn-outline:hover, .btn-outline:focus-visible{
+    background: var(--charcoal);
+    color: var(--warm-white);
+    transform: translateY(-2px);
+  }
+
+  /* ===================== FOOTER ===================== */
+  footer.site-footer{
+    background: var(--charcoal);
+    color: #D9D4C8;
+    padding: 70px 0 30px;
+  }
+
+  .footer-grid{
+    display:grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 40px;
+    padding-bottom: 46px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .footer-brand .brand{ color: var(--warm-white); }
+  .footer-brand .brand span{ color: var(--olive-light); }
+  .footer-brand p{
+    color: #B9B4A6;
+    font-size: 0.92rem;
+    margin-top: 16px;
+    max-width: 32ch;
+  }
+
+  footer h4{
+    font-family: var(--font-sans);
+    color: var(--warm-white);
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+    font-weight: 700;
+  }
+
+  footer ul li{ margin-bottom: 12px; }
+  footer a{
+    color: #D9D4C8;
+    font-size: 0.92rem;
+    transition: color var(--transition);
+  }
+  footer a:hover, footer a:focus-visible{ color: var(--warm-white); }
+
+  .footer-bottom{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap: 12px;
+    padding-top: 26px;
+    font-size: 0.82rem;
+    color: #938E7F;
+  }
+  .footer-bottom a{ font-size: 0.82rem; }
+
+  /* ===================== RESPONSIVE ===================== */
+  @media (max-width: 1024px){
+    .audience-grid{ grid-template-columns: repeat(2, 1fr); }
+    .footer-grid{ grid-template-columns: 1fr 1fr; }
+    .credentials-strip{ grid-template-columns: 1fr; gap: 20px; }
+  }
+
+  @media (max-width: 860px){
+    nav.primary-nav ul{ display:none; }
+    .menu-toggle{ display:block; }
+    .intro-grid{ grid-template-columns: 1fr; gap: 36px; }
+    .photo-placeholder{ max-width: 220px; }
+    .philosophy-grid{ grid-template-columns: 1fr; gap: 36px; }
+
+    nav.primary-nav{
+      position: fixed;
+      top: 73px;
+      left:0; right:0;
+      background: var(--warm-white);
+      border-bottom: 1px solid var(--border);
+      flex-direction:column;
+      align-items:stretch;
+      gap:0;
+      max-height: 0;
+      overflow:hidden;
+      transition: max-height var(--transition);
+    }
+    nav.primary-nav.open{ max-height: 420px; }
+    nav.primary-nav ul{
+      display:flex;
+      flex-direction:column;
+      padding: 10px 32px 20px;
+      gap: 0;
+    }
+    nav.primary-nav ul li{ border-bottom: 1px solid var(--border-soft); }
+    nav.primary-nav ul li a{ display:block; padding: 14px 0; }
+    nav.primary-nav .nav-cta{
+      margin: 16px 32px 22px;
+      text-align:center;
+      justify-content:center;
+    }
+  }
+
+  @media (max-width: 680px){
+    section{ padding: 64px 0; }
+    .page-hero{ padding: 56px 0 50px; }
+    .audience-grid{ grid-template-columns: 1fr; }
+    .footer-grid{ grid-template-columns: 1fr; gap: 30px; }
+    .container{ padding: 0 20px; }
+    .nav-wrap{ padding: 16px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- ===================== HEADER ===================== -->
+<header class="site-header">
+  <div class="nav-wrap">
+    <a href="index.html" class="brand">
+      Alexander Grace Wright
+      <span>Book Marketing Strategist</span>
+    </a>
+
+    <nav class="primary-nav" id="primaryNav" aria-label="Primary navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" aria-current="page">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="approach.html">Our Approach</a></li>
+        <li><a href="work.html">Selected Work</a></li>
+      </ul>
+      <a href="contact.html" class="nav-cta">Discuss Your Book</a>
+    </nav>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primaryNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main-content">
+
+  <!-- ===================== PAGE HERO ===================== -->
+  <section class="page-hero">
+    <div class="container reveal">
+      <span class="eyebrow">About</span>
+      <h1>A research-first approach to understanding books and their readers.</h1>
+      <p>I'm Alexander Grace Wright. I work with authors to understand how their books are positioned, who their readers are, and what realistic opportunities exist to connect the two.</p>
+    </div>
+  </section>
+
+  <!-- ===================== INTRO / PHOTO ===================== -->
+  <section class="intro">
+    <div class="container intro-grid">
+
+      <!--
+        PROFILE PHOTO
+        This frame is pre-wired to look for a file named "alexander.png".
+
+        TO ADD YOUR PHOTO:
+        1. Save your professional headshot as "alexander.png"
+        2. Upload it into the SAME folder as this HTML file
+           (if you place it in a subfolder instead, e.g. "images/alexander.png",
+           update the src path below to match)
+        3. Refresh the page. Your photo will appear automatically inside the
+           circular frame, cropped to fit.
+
+        If "alexander.png" is missing or not yet uploaded, a placeholder graphic
+        displays instead so the page layout never breaks.
+      -->
+      <div class="reveal">
+        <div class="photo-placeholder">
+          <img
+            src="alexander profile.jpg"
+            alt="Alexander Grace Wright"
+            class="profile-photo"
+            onload="this.style.display='block'; document.getElementById('aboutPhotoFallback').style.display='none';"
+            onerror="this.style.display='none'; document.getElementById('aboutPhotoFallback').style.display='flex';"
+          >
+          <div class="photo-fallback" id="aboutPhotoFallback" role="img" aria-label="Placeholder for Alexander Grace Wright's professional photograph">
+            <svg width="56" height="56" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+              <circle cx="32" cy="24" r="12" stroke="#6E7651" stroke-width="2"/>
+              <path d="M12 54C12 42 20 36 32 36C44 36 52 42 52 54" stroke="#6E7651" stroke-width="2" fill="none"/>
+            </svg>
+            <span class="placeholder-label">Add alexander.png</span>
+            <span class="placeholder-sub">Upload your photo to this folder</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="intro-copy reveal">
+        <p>I bring more than eight years of experience across marketing, research, promotion, and related work, including book marketing specifically. That broader background shapes how I approach every project. I've spent years learning how audiences form, how positioning influences discovery, and how research reduces guesswork in any promotional effort, and I apply that thinking directly to the specific challenges authors face.</p>
+        <p>Book marketing has its own particular dynamics. Readers discover titles through recommendation systems, category placement, genre expectations, and word of mouth that often follows patterns specific to publishing. Part of my work has involved studying those patterns closely, so that the strategies I recommend are grounded in how book discovery actually happens, not in generic marketing assumptions borrowed from unrelated industries.</p>
+        <p>I work with authors from every publishing background. Independently published authors, traditionally published authors, debut authors, and established authors with multiple titles all face a version of the same underlying question: how does a reader who would genuinely enjoy this book actually find it? My job is to help answer that question with research rather than assumption.</p>
+
+        <div class="credentials-strip">
+          <div class="credential-item">
+            <div class="big">8+</div>
+            <p>Years across marketing, research, and promotional work</p>
+          </div>
+          <div class="credential-item">
+            <div class="big">01</div>
+            <p>Framework applied consistently to every project</p>
+          </div>
+          <div class="credential-item">
+            <div class="big">6</div>
+            <p>Distinct service areas tailored to each author's needs</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================== PHILOSOPHY ===================== -->
+  <section class="philosophy">
+    <div class="container philosophy-grid">
+      <div class="reveal">
+        <span class="eyebrow">Why Research Comes First</span>
+        <h2>Strategy without research is just a guess with better formatting.</h2>
+        <p style="color:var(--charcoal-soft); max-width: 46ch;">
+          It's tempting to jump straight into promotional activity: ads, social posts, review requests. But without understanding a book's positioning and its realistic reader base first, that activity is directionless. I've seen how much more effective marketing becomes once it's grounded in a clear picture of who the book is actually for.
+        </p>
+        <p style="color:var(--charcoal-soft); max-width: 46ch;">
+          That's why every engagement starts with careful observation of the book itself before any recommendation is made.
+        </p>
+      </div>
+
+      <div class="philosophy-list reveal">
+        <div class="philosophy-item">
+          <div class="mark">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="#4C5236" stroke-width="1.3"/><circle cx="8" cy="8" r="1.4" fill="#4C5236"/></svg>
+          </div>
+          <div>
+            <h3>Observation before recommendation</h3>
+            <p>I read your book's description, categories, genre signals, and catalogue before offering any opinion on strategy.</p>
+          </div>
+        </div>
+        <div class="philosophy-item">
+          <div class="mark">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8H14M8 2V14" stroke="#4C5236" stroke-width="1.3"/></svg>
+          </div>
+          <div>
+            <h3>Patterns over assumptions</h3>
+            <p>Reader behaviour in publishing follows patterns. Research helps distinguish what's likely to be relevant to your book from generic marketing advice.</p>
+          </div>
+        </div>
+        <div class="philosophy-item">
+          <div class="mark">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8L7 12L13 4" stroke="#4C5236" stroke-width="1.5" fill="none"/></svg>
+          </div>
+          <div>
+            <h3>Honesty about outcomes</h3>
+            <p>Research informs better decisions, but it doesn't guarantee sales, reviews, or rankings. I won't promise outcomes that can't be controlled.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== WHO I WORK WITH ===================== -->
+  <section class="audience" style="background:var(--warm-white); border-top:1px solid var(--border-soft); border-bottom:1px solid var(--border-soft);">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Who I Work With</span>
+        <h2>Authors from every publishing background</h2>
+        <p>No single group of authors is prioritized over another. The research process adapts to the book, not the publishing path.</p>
+        <div class="divider-line"></div>
+      </div>
+
+      <div class="audience-grid">
+        <div class="audience-card reveal">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="8" y="6" width="24" height="28" rx="2" stroke="#6E7651" stroke-width="1.5"/><path d="M14 14H26M14 20H26M14 26H20" stroke="#6E7651" stroke-width="1.5"/></svg>
+          <h3>Independently Published</h3>
+          <p>Authors managing their own catalogue and marketing decisions.</p>
+        </div>
+        <div class="audience-card reveal">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="10" width="28" height="20" rx="2" stroke="#6E7651" stroke-width="1.5"/><path d="M6 14H34" stroke="#6E7651" stroke-width="1.5"/></svg>
+          <h3>Traditionally Published</h3>
+          <p>Authors working alongside a publisher's existing marketing support.</p>
+        </div>
+        <div class="audience-card reveal">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="14" stroke="#6E7651" stroke-width="1.5"/><path d="M20 12V20L26 24" stroke="#6E7651" stroke-width="1.5"/></svg>
+          <h3>Debut Authors</h3>
+          <p>Authors introducing their first book to readers for the first time.</p>
+        </div>
+        <div class="audience-card reveal">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="7" y="8" width="10" height="24" rx="1.5" stroke="#6E7651" stroke-width="1.5"/><rect x="21" y="12" width="10" height="20" rx="1.5" stroke="#6E7651" stroke-width="1.5"/></svg>
+          <h3>Multi-Book Authors</h3>
+          <p>Authors with a series or backlist looking to connect readers across titles.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PERSONAL NOTE ===================== -->
+  <section class="personal-note">
+    <div class="container note-wrap reveal">
+      <span class="eyebrow">A Note on How I Work</span>
+      <h2>I'd rather tell you what the research shows than what you want to hear.</h2>
+      <p>Some books have clear, strong opportunities waiting to be acted on. Others require more patience, more targeted research, or a narrower focus. I aim to be straightforward about which situation applies to your book, and to build a plan around that honest assessment rather than a generic promise.</p>
+    </div>
+  </section>
+
+  <!-- ===================== CLOSING CTA ===================== -->
+  <section class="closing-cta">
+    <div class="container reveal">
+      <h2>Curious what the research might show for your book?</h2>
+      <p>Share a few details about your book and your goals, and I'll let you know what I find.</p>
+      <a href="contact.html" class="btn btn-primary">Discuss Your Book</a>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand">
+          Alexander Grace Wright
+          <span>Book Marketing Strategist</span>
+        </a>
+        <p>Research-led book marketing and reader discovery consulting for authors of every publishing background.</p>
+      </div>
+
+      <div>
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="approach.html">Our Approach</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>More</h4>
+        <ul>
+          <li><a href="work.html">Selected Work</a></li>
+          <li><a href="contact.html">Discuss Your Book</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:alexanderwright205@gmail.com">alexanderwright205@gmail.com</a></li>
+          <li><a href="contact.html">Inquiry Form</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> Alexander Grace Wright. All rights reserved.</span>
+      <a href="privacy.html">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ===================== MOBILE NAVIGATION =====================
+  (function(){
+    const toggle = document.getElementById('menuToggle');
+    const nav = document.getElementById('primaryNav');
+
+    toggle.addEventListener('click', function(){
+      const isOpen = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    nav.querySelectorAll('a').forEach(function(link){
+      link.addEventListener('click', function(){
+        nav.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape'){
+        nav.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  })();
+
+  // ===================== SCROLL REVEAL ANIMATION =====================
+  (function(){
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const revealEls = document.querySelectorAll('.reveal');
+
+    if(reduceMotion || !('IntersectionObserver' in window)){
+      revealEls.forEach(function(el){ el.classList.add('is-visible'); });
+      return;
+    }
+
+    const observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    revealEls.forEach(function(el){ observer.observe(el); });
+  })();
+
+  // ===================== FOOTER YEAR =====================
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
